@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Quran Radio Wallpaper</title>
+<style>
+:root{
+  --bg:#0b0f16;
+  --panel:#111827;
+  --panel2:#171f2d;
+  --green:#10f0aa;
+  --green2:#00c987;
+  --blue:#24b9ff;
+  --orange:#ffae42;
+  --text:#e6edf3;
+  --muted:#9ba7b4;
+  --border:#2e394b;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  overflow:hidden;
+  background:
+    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px),
+    radial-gradient(circle at 20% 40%, rgba(16,240,170,.1), transparent 30%),
+    radial-gradient(circle at 80% 20%, rgba(36,185,255,.09), transparent 25%),
+    #080b11;
+  background-size:4px 4px,4px 4px,100% 100%,100% 100%,100% 100%;
+  color:var(--text);
+  font-family:Consolas, "Courier New", Tahoma, Arial, sans-serif;
+}
+.frame{
+  width:100vw;
+  height:100vh;
+  padding:16px 36px 24px;
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));
+  border:1px solid rgba(255,255,255,.08);
+}
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  color:#aeb8c7;
+  letter-spacing:10px;
+  font-size:14px;
+  user-select:none;
+}
+.power{
+  letter-spacing:1px;
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+.dot{
+  width:14px;height:14px;border-radius:50%;
+  background:var(--green);
+  box-shadow:0 0 22px var(--green);
+}
+.screen{
+  margin-top:14px;
+  border:2px solid rgba(16,240,170,.38);
+  border-radius:14px;
+  padding:20px;
+  min-height:40vh;
+  background:
+    repeating-linear-gradient(0deg, rgba(16,240,170,.04), rgba(16,240,170,.04) 1px, transparent 2px, transparent 5px),
+    linear-gradient(180deg,rgba(0,54,38,.45),rgba(0,20,18,.55));
+  box-shadow: inset 0 0 60px rgba(16,240,170,.08), 0 0 30px rgba(16,240,170,.09);
+}
+.location{
+  border:1px solid rgba(16,240,170,.18);
+  border-radius:9px;
+  padding:14px;
+  display:flex;
+  justify-content:space-between;
+  color:var(--green);
+  margin-bottom:22px;
+  font-weight:bold;
+}
+.now{
+  text-align:right;
+  margin-top:20px;
+}
+.label{
+  color:#d5ebff;
+  font-size:14px;
+}
+.title{
+  margin:8px 0 0;
+  color:var(--green);
+  font-size:clamp(34px,5vw,62px);
+  font-family:Tahoma, Arial, sans-serif;
+  text-shadow:0 0 20px rgba(16,240,170,.35);
+}
+.meta{
+  margin-top:18px;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  color:var(--orange);
+}
+.progress{
+  height:10px;
+  border-radius:20px;
+  background:rgba(16,240,170,.15);
+  margin-top:14px;
+  overflow:hidden;
+}
+.bar{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,var(--green),var(--blue));
+  box-shadow:0 0 20px var(--green);
+}
+.buttons{
+  margin-top:28px;
+  display:grid;
+  grid-template-columns:repeat(8,1fr);
+  gap:10px;
+}
+button,select{
+  border:none;
+  outline:none;
+  color:var(--text);
+  background:linear-gradient(180deg,#2a3141,#1c2230);
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:9px;
+  padding:13px 14px;
+  font-family:Consolas, "Courier New", Tahoma, Arial, sans-serif;
+  cursor:pointer;
+  box-shadow:0 8px 18px rgba(0,0,0,.18);
+}
+button:hover{
+  border-color:rgba(16,240,170,.55);
+}
+.controls{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
+  margin-top:38px;
+  direction:ltr;
+}
+.round{
+  width:74px;
+  height:74px;
+  border-radius:50%;
+  font-size:28px;
+  color:var(--green);
+}
+.round.big{
+  width:92px;
+  height:92px;
+  font-size:34px;
+}
+.selectrow{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+select{
+  width:100%;
+}
+.footer{
+  position:absolute;
+  bottom:24px;
+  left:36px;
+  right:36px;
+  border:1px solid var(--border);
+  color:var(--orange);
+  text-align:center;
+  padding:12px;
+  border-radius:10px;
+}
+@media(max-width:800px){
+  .frame{padding:14px}
+  .buttons{grid-template-columns:repeat(2,1fr)}
+  .selectrow{grid-template-columns:1fr}
+  .title{font-size:32px}
+  .controls{margin-top:22px}
+}
+</style>
+</head>
+<body>
+<div class="frame">
+  <div class="top">
+    <div>QURAN RADIO<br><span style="letter-spacing:5px">QR-V1 · CAIRO</span></div>
+    <div class="power"><span class="dot"></span> PWR</div>
+  </div>
+
+  <section class="screen">
+    <div class="location">
+      <div>LOCATION&nbsp;&nbsp; DOHA · QATAR<br><span style="font-weight:400">Live stream from Cairo Quran Radio</span></div>
+      <button id="openWindowBtn">فتح الصوت في نافذة مستقلة</button>
+    </div>
+
+    <div class="now">
+      <div class="label">بث مباشر من القاهرة</div>
+      <h1 class="title">إذاعة القرآن الكريم - القاهرة</h1>
+    </div>
+
+    <div class="meta">
+      <div id="status">STREAM · OFF</div>
+      <div id="dateLabel"></div>
+    </div>
+    <div class="progress"><div class="bar" id="bar"></div></div>
+
+    <div class="selectrow">
+      <select id="stationSelect">
+        <option value="https://n0e.radiojar.com/8s5u5tpdtwzuv">إذاعة القرآن الكريم - القاهرة 1</option>
+        <option value="https://stream.radiojar.com/8s5u5tpdtwzuv">إذاعة القرآن الكريم - القاهرة 2</option>
+      </select>
+
+      <select id="readerSelect">
+        <option>الشيخ محمود خليل الحصري</option>
+        <option>الشيخ محمد صديق المنشاوي</option>
+        <option>الشيخ عبد الباسط عبد الصمد</option>
+        <option>الشيخ مصطفى إسماعيل</option>
+        <option>الشيخ محمد رفعت</option>
+      </select>
+    </div>
+  </section>
+
+  <div class="buttons">
+    <button>DETAILS</button>
+    <button>SCHED</button>
+    <button>ALARM</button>
+    <button>LOCATION</button>
+    <button>RADIO</button>
+    <button>NOTIFY</button>
+    <button>WATCH</button>
+    <button>SLEEP</button>
+  </div>
+
+  <div class="controls">
+    <button class="round" id="notifyBtn">♕</button>
+    <button class="round" id="stopBtn">□</button>
+    <button class="round" id="playBtn">■</button>
+    <button class="round big" id="toggleBtn">▶</button>
+  </div>
+
+  <div class="footer">إظهار / إخفاء الإعدادات</div>
+</div>
+
+<audio id="audio" crossorigin="anonymous"></audio>
+
+<script>
+const audio = document.getElementById("audio");
+const toggleBtn = document.getElementById("toggleBtn");
+const playBtn = document.getElementById("playBtn");
+const stopBtn = document.getElementById("stopBtn");
+const statusEl = document.getElementById("status");
+const bar = document.getElementById("bar");
+const stationSelect = document.getElementById("stationSelect");
+const readerSelect = document.getElementById("readerSelect");
+const openWindowBtn = document.getElementById("openWindowBtn");
+const notifyBtn = document.getElementById("notifyBtn");
+
+let playing = false;
+let fakeProgress = 0;
+
+function saveSettings(){
+  localStorage.setItem("quranRadioStation", stationSelect.value);
+  localStorage.setItem("quranRadioReader", readerSelect.value);
+}
+function loadSettings(){
+  const s = localStorage.getItem("quranRadioStation");
+  const r = localStorage.getItem("quranRadioReader");
+  if(s) stationSelect.value = s;
+  if(r) readerSelect.value = r;
+}
+function setStatus(text){ statusEl.textContent = text; }
+
+async function startRadio(){
+  try{
+    audio.src = stationSelect.value;
+    audio.volume = 0.85;
+    await audio.play();
+    playing = true;
+    toggleBtn.textContent = "Ⅱ";
+    setStatus("STREAM · ON");
+  }catch(e){
+    playing = false;
+    toggleBtn.textContent = "▶";
+    setStatus("STREAM · BLOCKED - اضغط تشغيل");
+    console.log(e);
+  }
+}
+function stopRadio(){
+  audio.pause();
+  audio.src = "";
+  playing = false;
+  toggleBtn.textContent = "▶";
+  setStatus("STREAM · OFF");
+}
+toggleBtn.onclick = ()=> playing ? stopRadio() : startRadio();
+playBtn.onclick = startRadio;
+stopBtn.onclick = stopRadio;
+
+stationSelect.onchange = ()=>{
+  saveSettings();
+  if(playing) startRadio();
+};
+readerSelect.onchange = saveSettings;
+
+function updateDate(){
+  const d = new Date();
+  document.getElementById("dateLabel").textContent =
+    d.toLocaleDateString("en-GB", {day:"2-digit", month:"short", year:"numeric"});
+}
+function animate(){
+  fakeProgress = (fakeProgress + 0.08) % 100;
+  bar.style.width = fakeProgress + "%";
+  requestAnimationFrame(animate);
+}
+
+function getCurrentReaderName(){
+  // دالة قابلة للتبديل لاحقًا عند ربط مصدر بيانات حقيقي
+  return "";
+}
+
+async function checkReader(){
+  const fav = readerSelect.value.trim();
+  const current = getCurrentReaderName().trim();
+  if(current && fav && current.includes(fav)){
+    if(!playing) await startRadio();
+    if("Notification" in window && Notification.permission === "granted"){
+      new Notification("إذاعة القرآن الكريم", {body:"القارئ المفضل ظهر الآن: " + fav});
+    }
+    if(navigator.vibrate) navigator.vibrate([200,100,200]);
+  }
+}
+
+notifyBtn.onclick = async ()=>{
+  if("Notification" in window){
+    const p = await Notification.requestPermission();
+    alert(p === "granted" ? "تم تفعيل الإشعارات" : "لم يتم تفعيل الإشعارات");
+  }else{
+    alert("المتصفح لا يدعم الإشعارات");
+  }
+};
+
+openWindowBtn.onclick = ()=>{
+  const url = location.href;
+  window.open(url, "quran_radio_audio", "width=420,height=760,menubar=no,toolbar=no,location=no,status=no");
+};
+
+loadSettings();
+updateDate();
+animate();
+setInterval(updateDate, 60_000);
+setInterval(checkReader, 60_000);
+</script>
+</body>
+</html>

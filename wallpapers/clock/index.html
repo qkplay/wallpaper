@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Animated Clock Wallpaper</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  height:100vh;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  color:white;
+  font-family:"Segoe UI", Tahoma, Arial, sans-serif;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(0,255,170,.18), transparent 32%),
+    radial-gradient(circle at 70% 40%, rgba(0,130,255,.18), transparent 28%),
+    linear-gradient(135deg,#070b12,#101827,#070b12);
+}
+.orb{
+  position:absolute;
+  width:460px;height:460px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.06);
+  animation:spin 18s linear infinite;
+  background:conic-gradient(from 0deg, transparent, rgba(0,255,170,.2), transparent, rgba(0,150,255,.22), transparent);
+  filter:blur(.2px);
+}
+.card{
+  position:relative;
+  text-align:center;
+  padding:45px 65px;
+  border-radius:30px;
+  background:rgba(15,23,42,.65);
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 30px 100px rgba(0,0,0,.35);
+  backdrop-filter:blur(18px);
+}
+.time{
+  font-size:clamp(54px,12vw,150px);
+  font-weight:800;
+  letter-spacing:3px;
+}
+.date{
+  color:#a7f3d0;
+  font-size:clamp(18px,3vw,34px);
+  margin-top:12px;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<div class="orb"></div>
+<div class="card">
+  <div class="time" id="time">00:00:00</div>
+  <div class="date" id="date">---</div>
+</div>
+<script>
+function tick(){
+  const d = new Date();
+  document.getElementById("time").textContent = d.toLocaleTimeString("ar-EG", {
+    hour:"2-digit", minute:"2-digit", second:"2-digit"
+  });
+  document.getElementById("date").textContent = d.toLocaleDateString("ar-EG", {
+    weekday:"long", year:"numeric", month:"long", day:"numeric"
+  });
+}
+tick();
+setInterval(tick,1000);
+</script>
+</body>
+</html>
